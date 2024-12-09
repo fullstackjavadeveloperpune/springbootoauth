@@ -34,6 +34,11 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeList.stream().sorted(Comparator.comparing(Employee::getEmpName)).toList());
     }
 
+    @GetMapping("/sortbysalary")
+    public ResponseEntity<List<Employee>> sortBySalary() {
+        return ResponseEntity.ok(employeeList.stream().sorted(Comparator.comparing(Employee::getEmpSalary)).toList());
+    }
+
     @GetMapping("/findbyname/{empName}")
     public ResponseEntity<List<Employee>> findByName(@PathVariable String empName) {
         return ResponseEntity.ok(employeeList.stream().filter(emp -> emp.getEmpName().equals(empName)).toList());
