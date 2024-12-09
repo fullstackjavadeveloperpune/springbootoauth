@@ -56,6 +56,8 @@ Steps-
 
 Please use below content in appliaction.yml file-
 
+
+
 spring:
   security:
     oauth2:
